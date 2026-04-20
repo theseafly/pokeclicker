@@ -67,7 +67,7 @@ npm run website
 ```
 This will populate the `/docs` folder.
 
-After this command completes you can now publish this to your GitHub pages branch using:
+After this command completes you can now publish this to your GitHub pages branch using: 
 ```cmd
 npm run publish
 ```
