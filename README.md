@@ -59,7 +59,7 @@ Cloud Shell opens the preview URL on its proxy service in a new browser window.
 
 ## Deploying a new version to Github Pages
 > [!IMPORTANT]
-> Before deploying, check that the game compiles and starts up without errors.
+> Before deploying, check that the game compiles and starts up without errors. 
 
 Then run the following:
 ```cmd
