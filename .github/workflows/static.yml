@@ -1,7 +1,7 @@
 name: Deploy PokeClicker
 on:
   push:
-    branches: ["develop"]
+    branches: ["develop"] # PokeClicker uses 'develop' as the main branch
   workflow_dispatch:
 
 permissions:
@@ -22,18 +22,16 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        # PokeClicker often has strict version requirements
         run: npm install --legacy-peer-deps
 
-      - name: Build
-        # The official repo uses Gulp via this command
-        run: npm run build
+      - name: Build the Website
+        # This is the specific command from the PokeClicker README
+        run: npm run website
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # IMPORTANT: Verify if your repo builds to 'docs' or 'dist'
-          # Most PokeClicker forks use 'docs' for GitHub Pages compatibility
+          # Now that 'npm run website' has run, the docs folder exists!
           path: './docs'
 
       - name: Deploy to GitHub Pages
